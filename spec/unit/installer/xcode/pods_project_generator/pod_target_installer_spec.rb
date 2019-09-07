@@ -159,7 +159,7 @@ module Pod
                 unit_test_native_target.name.should == 'WatermelonLib-Unit-Tests'
                 unit_test_native_target.product_reference.name.should == 'WatermelonLib-Unit-Tests'
                 unit_test_native_target.build_configurations.each do |bc|
-                  bc.base_configuration_reference.real_path.basename.to_s.should == 'WatermelonLib.unit-tests.xcconfig'
+                  bc.base_configuration_reference.real_path.basename.to_s.should == "WatermelonLib.unit-tests.#{bc.name.downcase}.xcconfig"
                   bc.build_settings['PRODUCT_NAME'].should == 'WatermelonLib-Unit-Tests'
                   bc.build_settings['MACH_O_TYPE'].should.be.nil
                   bc.build_settings['PRODUCT_MODULE_NAME'].should.be.nil
@@ -175,7 +175,7 @@ module Pod
                 ui_test_native_target.name.should == 'WatermelonLib-UI-UITests'
                 ui_test_native_target.product_reference.name.should == 'WatermelonLib-UI-UITests'
                 ui_test_native_target.build_configurations.each do |bc|
-                  bc.base_configuration_reference.real_path.basename.to_s.should == 'WatermelonLib.ui-uitests.xcconfig'
+                  bc.base_configuration_reference.real_path.basename.to_s.should == "WatermelonLib.ui-uitests.#{bc.name.downcase}.xcconfig"
                   bc.build_settings['PRODUCT_NAME'].should == 'WatermelonLib-UI-UITests'
                   bc.build_settings['MACH_O_TYPE'].should.be.nil
                   bc.build_settings['PRODUCT_MODULE_NAME'].should.be.nil
@@ -191,7 +191,7 @@ module Pod
                 snapshot_test_native_target.name.should == 'WatermelonLib-Unit-SnapshotTests'
                 snapshot_test_native_target.product_reference.name.should == 'WatermelonLib-Unit-SnapshotTests'
                 snapshot_test_native_target.build_configurations.each do |bc|
-                  bc.base_configuration_reference.real_path.basename.to_s.should == 'WatermelonLib.unit-snapshottests.xcconfig'
+                  bc.base_configuration_reference.real_path.basename.to_s.should == "WatermelonLib.unit-snapshottests.#{bc.name.downcase}.xcconfig"
                   bc.build_settings['PRODUCT_NAME'].should == 'WatermelonLib-Unit-SnapshotTests'
                   bc.build_settings['MACH_O_TYPE'].should.be.nil
                   bc.build_settings['PRODUCT_MODULE_NAME'].should.be.nil
@@ -206,7 +206,7 @@ module Pod
                 app_native_target.name.should == 'WatermelonLib-App'
                 app_native_target.product_reference.name.should == 'WatermelonLib-App'
                 app_native_target.build_configurations.each do |bc|
-                  bc.base_configuration_reference.real_path.basename.to_s.should == 'WatermelonLib.app.xcconfig'
+                  bc.base_configuration_reference.real_path.basename.to_s.should == "WatermelonLib.app.#{bc.name.downcase}.xcconfig"
                   bc.build_settings['PRODUCT_NAME'].should == 'WatermelonLib-App'
                   bc.build_settings['PRODUCT_BUNDLE_IDENTIFIER'].should == 'org.cocoapods.${PRODUCT_NAME:rfc1034identifier}'
                   bc.build_settings['CURRENT_PROJECT_VERSION'].should == '1'
@@ -235,7 +235,7 @@ module Pod
                 unit_test_native_target.name.should == 'WatermelonLib-Unit-Tests'
                 unit_test_native_target.product_reference.name.should == 'WatermelonLib-Unit-Tests'
                 unit_test_native_target.build_configurations.each do |bc|
-                  bc.base_configuration_reference.real_path.basename.to_s.should == 'WatermelonLib.unit-tests.xcconfig'
+                  bc.base_configuration_reference.real_path.basename.to_s.should == "WatermelonLib.unit-tests.#{bc.name.downcase}.xcconfig"
                   bc.build_settings['PRODUCT_NAME'].should == 'WatermelonLib-Unit-Tests'
                   bc.build_settings['MACH_O_TYPE'].should.be.nil
                   bc.build_settings['PRODUCT_MODULE_NAME'].should.be.nil
@@ -250,7 +250,7 @@ module Pod
                 ui_test_native_target.name.should == 'WatermelonLib-UI-UITests'
                 ui_test_native_target.product_reference.name.should == 'WatermelonLib-UI-UITests'
                 ui_test_native_target.build_configurations.each do |bc|
-                  bc.base_configuration_reference.real_path.basename.to_s.should == 'WatermelonLib.ui-uitests.xcconfig'
+                  bc.base_configuration_reference.real_path.basename.to_s.should == "WatermelonLib.ui-uitests.#{bc.name.downcase}.xcconfig"
                   bc.build_settings['PRODUCT_NAME'].should == 'WatermelonLib-UI-UITests'
                   bc.build_settings['MACH_O_TYPE'].should.be.nil
                   bc.build_settings['PRODUCT_MODULE_NAME'].should.be.nil
@@ -266,7 +266,7 @@ module Pod
                 snapshot_test_native_target.name.should == 'WatermelonLib-Unit-SnapshotTests'
                 snapshot_test_native_target.product_reference.name.should == 'WatermelonLib-Unit-SnapshotTests'
                 snapshot_test_native_target.build_configurations.each do |bc|
-                  bc.base_configuration_reference.real_path.basename.to_s.should == 'WatermelonLib.unit-snapshottests.xcconfig'
+                  bc.base_configuration_reference.real_path.basename.to_s.should == "WatermelonLib.unit-snapshottests.#{bc.name.downcase}.xcconfig"
                   bc.build_settings['PRODUCT_NAME'].should == 'WatermelonLib-Unit-SnapshotTests'
                   bc.build_settings['MACH_O_TYPE'].should.be.nil
                   bc.build_settings['PRODUCT_MODULE_NAME'].should.be.nil
@@ -281,7 +281,7 @@ module Pod
                 app_native_target.name.should == 'WatermelonLib-App'
                 app_native_target.product_reference.name.should == 'WatermelonLib-App'
                 app_native_target.build_configurations.each do |bc|
-                  bc.base_configuration_reference.real_path.basename.to_s.should == 'WatermelonLib.app.xcconfig'
+                  bc.base_configuration_reference.real_path.basename.to_s.should == "WatermelonLib.app.#{bc.name.downcase}.xcconfig"
                   bc.build_settings['PRODUCT_NAME'].should == 'WatermelonLib-App'
                   bc.build_settings['PRODUCT_BUNDLE_IDENTIFIER'].should == 'org.cocoapods.${PRODUCT_NAME:rfc1034identifier}'
                   bc.build_settings['CURRENT_PROJECT_VERSION'].should == '1'
@@ -356,14 +356,17 @@ module Pod
               it 'adds xcconfig file reference for test native targets' do
                 @ios_installer.install!
                 group = @project['Pods/WatermelonLib/Support Files']
-                group.children.map(&:display_name).sort.should.include 'WatermelonLib.unit-tests.xcconfig'
-                group.children.map(&:display_name).sort.should.include 'WatermelonLib.unit-snapshottests.xcconfig'
+                group.children.map(&:display_name).sort.should.include 'WatermelonLib.unit-tests.debug.xcconfig'
+                group.children.map(&:display_name).sort.should.include 'WatermelonLib.unit-tests.release.xcconfig'
+                group.children.map(&:display_name).sort.should.include 'WatermelonLib.unit-snapshottests.debug.xcconfig'
+                group.children.map(&:display_name).sort.should.include 'WatermelonLib.unit-snapshottests.release.xcconfig'
               end
 
               it 'adds xcconfig file reference for app native targets' do
                 @ios_installer.install!
                 group = @project['Pods/WatermelonLib/Support Files']
-                group.children.map(&:display_name).sort.should.include 'WatermelonLib.app.xcconfig'
+                group.children.map(&:display_name).sort.should.include 'WatermelonLib.app.debug.xcconfig'
+                group.children.map(&:display_name).sort.should.include 'WatermelonLib.app.release.xcconfig'
               end
 
               it 'does not add test header imports to umbrella header' do
@@ -408,7 +411,7 @@ module Pod
                 installation_result.test_resource_bundle_targets.count.should == 3
                 unit_test_resource_bundle_target = @project.targets.find { |t| t.name == 'WatermelonLib-WatermelonLibTestResources' }
                 unit_test_resource_bundle_target.build_configurations.each do |bc|
-                  bc.base_configuration_reference.real_path.basename.to_s.should == 'WatermelonLib.unit-tests.xcconfig'
+                  bc.base_configuration_reference.real_path.basename.to_s.should == "WatermelonLib.unit-tests.#{bc.name.downcase}.xcconfig"
                   bc.build_settings['CONFIGURATION_BUILD_DIR'].should.be.nil
                 end
                 @project.targets.find { |t| t.name == 'WatermelonLib-WatermelonLibSnapshotTestResources' }.should.be.nil
@@ -696,7 +699,8 @@ module Pod
                 group.children.map(&:display_name).sort.should == [
                   'BananaLib-Pods-SampleProject-dummy.m',
                   'BananaLib-Pods-SampleProject-prefix.pch',
-                  'BananaLib-Pods-SampleProject.xcconfig',
+                  'BananaLib-Pods-SampleProject.debug.xcconfig',
+                  'BananaLib-Pods-SampleProject.release.xcconfig',
                 ]
               end
 
@@ -707,7 +711,8 @@ module Pod
                 group.children.map(&:display_name).sort.should == [
                   'BananaLib-Pods-SampleProject-dummy.m',
                   'BananaLib-Pods-SampleProject-prefix.pch',
-                  'BananaLib-Pods-SampleProject.xcconfig',
+                  'BananaLib-Pods-SampleProject.debug.xcconfig',
+                  'BananaLib-Pods-SampleProject.release.xcconfig',
                 ]
               end
 
@@ -717,7 +722,8 @@ module Pod
                 group = @project['Pods/BananaLib/Support Files']
                 group.children.map(&:display_name).sort.should == [
                   'BananaLib-Pods-SampleProject-dummy.m',
-                  'BananaLib-Pods-SampleProject.xcconfig',
+                  'BananaLib-Pods-SampleProject.debug.xcconfig',
+                  'BananaLib-Pods-SampleProject.release.xcconfig',
                 ]
               end
 
@@ -728,8 +734,9 @@ module Pod
                 group.children.map(&:display_name).sort.should == [
                   'BananaLib-Pods-SampleProject-dummy.m',
                   'BananaLib-Pods-SampleProject-prefix.pch',
+                  'BananaLib-Pods-SampleProject.debug.xcconfig',
                   'BananaLib-Pods-SampleProject.modulemap',
-                  'BananaLib-Pods-SampleProject.xcconfig',
+                  'BananaLib-Pods-SampleProject.release.xcconfig',
                 ]
               end
 
@@ -756,8 +763,8 @@ module Pod
                 it 'adds the build configurations to the resources bundle targets' do
                   @installer.install!
                   @bundle_target = @project.targets.find { |t| t.name == 'BananaLib-Pods-SampleProject-banana_bundle' }
-                  file = config.sandbox.root + @pod_target.xcconfig_path
                   @bundle_target.build_configurations.each do |bc|
+                    file = config.sandbox.root + @pod_target.xcconfig_path(bc.name.downcase)
                     bc.base_configuration_reference.real_path.should == file
                   end
                 end
@@ -839,7 +846,8 @@ module Pod
                 group.children.map(&:display_name).sort.should == [
                   'BananaLib-dummy.m',
                   'BananaLib-prefix.pch',
-                  'BananaLib.xcconfig',
+                  'BananaLib.debug.xcconfig',
+                  'BananaLib.release.xcconfig',
                 ]
               end
 
@@ -849,7 +857,8 @@ module Pod
                 group = @project['Pods/BananaLib/Support Files']
                 group.children.map(&:display_name).sort.should == [
                   'BananaLib-dummy.m',
-                  'BananaLib.xcconfig',
+                  'BananaLib.debug.xcconfig',
+                  'BananaLib.release.xcconfig',
                 ]
               end
 
@@ -860,8 +869,9 @@ module Pod
                 group.children.map(&:display_name).sort.should == [
                   'BananaLib-dummy.m',
                   'BananaLib-prefix.pch',
+                  'BananaLib.debug.xcconfig',
                   'BananaLib.modulemap',
-                  'BananaLib.xcconfig',
+                  'BananaLib.release.xcconfig',
                 ]
               end
 
@@ -887,8 +897,8 @@ module Pod
                 it 'adds the build configurations to the resources bundle targets' do
                   @installer.install!
                   @bundle_target = @project.targets.find { |t| t.name == 'BananaLib-banana_bundle' }
-                  file = config.sandbox.root + @pod_target.xcconfig_path
                   @bundle_target.build_configurations.each do |bc|
+                    file = config.sandbox.root + @pod_target.xcconfig_path(bc.name.downcase)
                     bc.base_configuration_reference.real_path.should == file
                   end
                 end
@@ -919,9 +929,11 @@ module Pod
 
             it 'creates the xcconfig file' do
               @installer.install!
-              file = config.sandbox.root + @pod_target.xcconfig_path
-              xcconfig = Xcodeproj::Config.new(file)
-              xcconfig.to_hash['PODS_ROOT'].should == '${SRCROOT}'
+              %w(debug release).each do |variant|
+                file = config.sandbox.root + @pod_target.xcconfig_path(variant)
+                xcconfig = Xcodeproj::Config.new(file)
+                xcconfig.to_hash['PODS_ROOT'].should == '${SRCROOT}'
+              end
             end
 
             it "creates a prefix header, including the contents of the specification's prefix header" do
@@ -964,8 +976,9 @@ module Pod
                 'BananaLib-Info.plist',
                 'BananaLib-dummy.m',
                 'BananaLib-prefix.pch',
+                'BananaLib.debug.xcconfig',
                 'BananaLib.modulemap',
-                'BananaLib.xcconfig',
+                'BananaLib.release.xcconfig',
               ]
             end
 
@@ -977,8 +990,9 @@ module Pod
                 'BananaLib-Info.plist',
                 'BananaLib-dummy.m',
                 'BananaLib-prefix.pch',
+                'BananaLib.debug.xcconfig',
                 'BananaLib.modulemap',
-                'BananaLib.xcconfig',
+                'BananaLib.release.xcconfig',
               ]
             end
 
@@ -992,8 +1006,9 @@ module Pod
               group.children.map(&:display_name).sort.should == [
                 'BananaLib-dummy.m',
                 'BananaLib-prefix.pch',
+                'BananaLib.debug.xcconfig',
                 'BananaLib.modulemap',
-                'BananaLib.xcconfig',
+                'BananaLib.release.xcconfig',
               ]
             end
 
@@ -1013,7 +1028,7 @@ module Pod
               @pod_target.stubs(:should_build?).returns(false)
               @installer.install!
               group = @project['Pods/BananaLib/Support Files']
-              group.children.map(&:display_name).sort.should == ['BananaLib.xcconfig']
+              group.children.map(&:display_name).sort.should == %w(BananaLib.debug.xcconfig BananaLib.release.xcconfig)
             end
 
             it 'does not set architectures for targets that should not build' do
